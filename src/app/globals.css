@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  background-color: #0a0c10;
+  color: #e6edf3;
+  -webkit-font-smoothing: antialiased;
+  --accent: #7cf5b0;
+  --reference: #4cc9f0;
+  --synth: #f6a13a;
+  --danger: #ff6b6b;
+}
+
+/* Compact range sliders for the lab feel */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  background: #2a323f;
+  border-radius: 9999px;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: #7cf5b0;
+  cursor: pointer;
+  border: 2px solid #0a0c10;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: #7cf5b0;
+  cursor: pointer;
+  border: 2px solid #0a0c10;
+}
+
+/* Thin scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f1218;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a323f;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a4453;
+}
+
+.panel {
+  background-color: #0f1218;
+  border: 1px solid #1d232e;
+  border-radius: 0.5rem;
+}
+.panel-header {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9aa7b4;
+}
