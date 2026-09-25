@@ -7,7 +7,7 @@ import {
   type SynthParameters,
 } from "@/lib/synth/params";
 import { renderSynth, renderSingleCycle } from "@/lib/synth/engine";
-import { decodeAudioFile, playSamples, stopPlayback } from "@/lib/audio/playback";
+import { decodeAudioFile, downloadWav, playSamples, stopPlayback } from "@/lib/audio/playback";
 import { analyzeAudio, type AudioAnalysis } from "@/lib/audio/analysis";
 import {
   compareSignals,
@@ -225,6 +225,16 @@ export default function LabPage() {
           </Button>
           <Button variant="synth" onClick={playing === "synth" ? stopAll : playSynth} disabled={!synth}>
             {playing === "synth" ? "■ Stop" : "▶ B: Synthesis"}
+          </Button>
+          <Button
+            variant="default"
+            onClick={() => {
+              if (synth) downloadWav(synth.samples, synth.sampleRate, `${params.name || "synthesis"}.wav`);
+            }}
+            disabled={!synth}
+            title="Download the synthesized audio as a 16-bit WAV file"
+          >
+            ⬇ Download WAV
           </Button>
         </div>
       </header>
